@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
 
 	def new
-		# render :new
 	end
 
 	def create
@@ -10,6 +9,7 @@ class SessionsController < ApplicationController
     	log_in(user)
     	redirect_to user
     else
+      @errors = "oops"
     	# flash[:danger] = "WRONG!!"
     	render :new
     end
@@ -25,7 +25,5 @@ class SessionsController < ApplicationController
 	end
 
 	private
-	# def user_params
- #    params.require(:user).permit(:name, :email, :password, :password_confirmation)
- #  end
+
 end
