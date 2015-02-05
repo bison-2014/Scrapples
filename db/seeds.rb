@@ -5,4 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-#
+
+require 'csv'
+
+
+CSV.foreach('db/cards_remux.csv', headers: true) do |line|
+  Card.create!(name: line['name'], bio: line['text'], category: line['category'])
+end
