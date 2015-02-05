@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'csv'
 
-CSV.foreach('db/cardset.csv', headers: true) do |line|
-  Card.create(name: line['Name'], bio: line['Text'], category: line['Category'])
+
+CSV.foreach('db/cards_remux.csv', headers: true) do |line|
+  Card.create!(name: line['name'], bio: line['text'], category: line['category'])
 end
