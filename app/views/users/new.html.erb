@@ -1,24 +1,8 @@
 <div class="sign_up">
-
   <h1>Sign up!</h1>
-  <%= form_for @user do |f| %>
-    <!-- @user.errors -->
-  <p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :password %>
-    <%= f.password_field_tag :password %>
-  </p>
 
-  <p>
-    <%= f.submit %>
-  </p>
-    <% end %>
+  <%= render 'form' %>
+ 
+  <%= link_to 'profile', @user %>
 
 </div>
