@@ -21,7 +21,8 @@ class UsersController < ApplicationController
     # @user.password = params[:password]
 
     if @user.save
-      flash[:success] = "You have signed up successfully"
+      log_in(@user)
+      # flash[:success] = "You have signed up successfully"
       # flash[:color] = "Valid"
       session[:user_id] = @user.id
       redirect_to @user
@@ -39,6 +40,11 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    log_out
+    redirect_to login_path
   end
 
 

@@ -11,3 +11,8 @@ class User < ActiveRecord::Base
   validates_length_of :password, :in => 6..20, :on => :create
 
 end
+
+# include session helper? better way to do it?
+# def set_current_user
+#   User.current = (session[:user_id]) ? User.find_by_id(session[:user_id]) : nil
+# end
