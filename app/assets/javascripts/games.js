@@ -1,6 +1,8 @@
 $( document ).ready(function() {
 
     $('#invite-user').click(function(e) {
-        $('<div><input name="email[]" type="text" /></div>').appendTo('#invite-user-container')
+        var newForm = $('<div><input name="email[]" type="text" /></div>');
+        $('#invite-user-container').append(newForm)
+        newForm.hide().slideToggle('fast');
     })
 });
