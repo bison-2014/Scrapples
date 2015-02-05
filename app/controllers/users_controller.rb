@@ -24,7 +24,7 @@ class UsersController < ApplicationController
       log_in(@user)
       # flash[:success] = "You have signed up successfully"
       # flash[:color] = "Valid"
-      session[:user_id] = @user.id
+      # session[:user_id] = @user.id
       redirect_to @user
     else
       # flash[:notice] = "Form is invalid"
@@ -42,14 +42,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def destroy
-    log_out
-    redirect_to login_path
-  end
-
-
   private
-
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
