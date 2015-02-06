@@ -29,10 +29,17 @@ describe UsersController do
 
   describe 'GET #edit' do
     it 'renders successfully' do
-      get :edit
-      expect(response).to be_success
+      user = users(:dicko)
+      get edit_user_path(user)
+       assert_template 'users/edit'
+    patch user_path(@user), user: { name:  "Dicko",
+                                    email: "foo@invalid.com",
+                                    password: "foo",
+                                    password_confirmation: "foo" }
+    assert_template 'users/edit'
     end
 
   end
 
 end
+ 

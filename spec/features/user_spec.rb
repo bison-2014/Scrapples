@@ -10,7 +10,7 @@ feature 'user can sign up' do
     fill_in 'Password confirmation', with: 'password'
     click_button 'Create User'
 
-    save_and_open_page
+    # save_and_open_page
   end
 end
 
