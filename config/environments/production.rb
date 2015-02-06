@@ -75,7 +75,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  
+
   # This configures the production key of the Development environment
   config.secret_key_base = ENV["SECRET_KEY_BASE"]
 end
