@@ -1,4 +1,9 @@
 class User < ActiveRecord::Base
+
+  has_many :appearances
+  has_many :games, through: :appearances
+  has_many :rounds, through: :games
+
   has_secure_password
   before_save { self.email = email.downcase }
 
@@ -6,7 +11,14 @@ class User < ActiveRecord::Base
   validates :name, presence: true
   validates :email, presence: true, format: { with: EMAIL_REGEX }, uniqueness: { case_sensitive: false }
 
-  validates :password, confirmation: true
-  validates_length_of :password, :in => 6..20, :on => :create
+
+  validates :password, :presence => true,
+                       :confirmation => true,
+                       :length => {:within => 6..40},
+                       :on => :create
+  validates :password, :confirmation => true,
+                       :length => {:within => 6..40},
+                       :allow_blank => true,
+                       :on => :update
 
 end
