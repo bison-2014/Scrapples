@@ -14,6 +14,8 @@ class Appearance < ActiveRecord::Base
   validates :player, uniqueness: { scope: :game,
   message: "must be unique for each game" }
 
+  after_create :draw_hand
+
   def draw_card!
     card = self.game.cards_not_drawn.sample
     self.holdings.create(card: card)
@@ -30,5 +32,11 @@ class Appearance < ActiveRecord::Base
 
   def played_cards
     self.drawn_cards.where(holdings: { played?: true} )
+  end
+
+  private
+
+  def draw_hand
+    7.times { draw_card! }
   end
 end
