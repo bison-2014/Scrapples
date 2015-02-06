@@ -42,12 +42,11 @@ describe UsersController do
   end
 
   describe 'PATCH#update' do
-    before { patch :update, user: {email: "miriam@me.com" }, id: miriam.id}
+    before { patch :update, user: {email: "miriam@me.com"}, id: miriam.id}
 
     it "will direct user to show page" do
       expect(response).to redirect_to miriam
     end
-
 
   end
 

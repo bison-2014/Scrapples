@@ -1,8 +1,5 @@
 class SessionsController < ApplicationController
 
-	def new
-	end
-
 	def create
 		user = User.find_by(email: params[:session][:email])
     if user && user.authenticate(params[:session][:password])
@@ -13,10 +10,6 @@ class SessionsController < ApplicationController
     	# flash[:danger] = "WRONG!!"
     	render :new
     end
-	end
-
-	def show
-
 	end
 
 	def destroy
