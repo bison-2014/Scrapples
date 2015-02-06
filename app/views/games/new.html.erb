@@ -1,0 +1,15 @@
+<h3>Let's play a game of scrapples!</h4>
+
+<p>Please add other players to this game and we'll email them asking them to join.<p>
+
+<%= form_tag(games_path, method: 'post') do %>
+  <div id="invite-user-container">
+    <div>
+      <%= text_field_tag :'email[]' %>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <%= submit_tag 'Start the game!'%>
+<% end %>
