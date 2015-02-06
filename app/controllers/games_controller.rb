@@ -17,7 +17,8 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find_by(id: params[:id])
-    appearance = game.appearances.find_by(player: current_user)
+    @appearance = @game.appearances.find_by(player: current_user)
+    @round = @game.rounds.last
   end
 
   private
