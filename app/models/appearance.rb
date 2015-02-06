@@ -4,7 +4,7 @@ class Appearance < ActiveRecord::Base
   belongs_to :game
 
   has_many :holdings
-  has_many :held_cards, through: :holdings, source: :card
+  has_many :drawn_cards, through: :holdings, source: :card
 
   has_many :rounds, through: :game
 
@@ -22,5 +22,13 @@ class Appearance < ActiveRecord::Base
 
   def incremement_point!
     self.points += 1
+  end
+
+  def held_cards
+    self.drawn_cards.where(holdings: { played?: false} )
+  end
+
+  def played_cards
+    self.drawn_cards.where(holdings: { played?: true} )
   end
 end
