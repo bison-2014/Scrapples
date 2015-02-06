@@ -15,6 +15,11 @@ class GamesController < ApplicationController
     redirect_to game_path(game)
   end
 
+  def show
+    @game = Game.find_by(id: params[:id])
+    appearance = game.appearances.find_by(player: current_user)
+  end
+
   private
 
   # def first_round
@@ -26,11 +31,6 @@ class GamesController < ApplicationController
     round = game.rounds.create!
 
     redirect_to game_path(game)
-  end
-
-  def show
-    game = Game.find_by(id: params[:id])
-    appearance = game.appearances.create!(player: current_user)
   end
 
 end

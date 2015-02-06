@@ -1,13 +1,17 @@
 <h1>Scrapples to Scrapples</h1>
 
-
-
+<div id="played-cards">
+  <!-- show the played card here -->
+</div>
 
 <h2>Your Hand</h2>
-
 
 <div id="hand">
   <% current_user.cards.each do |card| %>
     <%= render 'cards/show_card', locals: {card: card} %>
   <% end %>
 </div>
+
+<!-- card highlights on click -->
+<!-- join button enabled when card highlighted -->
+<!-- join button ajaxes and appends card to played cards div -->
