@@ -15,7 +15,7 @@ class Appearance < ActiveRecord::Base
   message: "must be unique for each game" }
 
   def draw_card!
-    card = self.game.unplayed_cards.sample
+    card = self.game.cards_not_drawn.sample
     self.holdings.create(card: card)
     card
   end

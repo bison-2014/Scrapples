@@ -10,7 +10,7 @@ class Game < ActiveRecord::Base
 
     after_create :create_first_round
 
-    def unplayed_cards
+    def cards_not_drawn
       held_cards = self.held_cards.all # precache list of all cards.  The "#all" is required to prevent us from querying the database a million times.
       Card.all.reject { |card| held_cards.include? card }
     end
