@@ -12,5 +12,5 @@ class User < ActiveRecord::Base
   validates :email, presence: true, format: { with: EMAIL_REGEX }, uniqueness: { case_sensitive: false }
 
   validates :password, confirmation: true
-  validates_length_of :password, :in => 6..20 #, :on => :create #and on update
+  validates_length_of :password, :in => 6..20
 end

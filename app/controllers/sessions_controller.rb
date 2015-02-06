@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     	log_in(user)
     	redirect_to user
     else
-      @errors = "oops"
+      @errors = "No records match the information that you have provided"
     	# flash[:danger] = "WRONG!!"
     	render :new
     end

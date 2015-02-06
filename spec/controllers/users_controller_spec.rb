@@ -17,11 +17,11 @@ describe UsersController do
   end
 
   describe 'POST #create' do
-    let(:nicole) do
+    let(:nicole_data) do
       {name: "nicole", email: "nicole@me.com", password: "password", password_confirmation: "password"}
     end
 
-    before { post :create, user: nicole }
+    before { post :create, user: nicole_data }
 
     it 'allows user to sign up' do
       expect(response).to redirect_to user_path(User.last)
@@ -31,7 +31,7 @@ describe UsersController do
 
   describe 'GET #edit' do
     before { get :edit, id: miriam.id }
-  
+
     it 'renders successfully' do
       expect(response).to be_success
     end
@@ -42,11 +42,13 @@ describe UsersController do
   end
 
   describe 'PATCH#update' do
-    before { put :update, user: {email: "miriam@me.com" }, id: miriam.id}
+    before { patch :update, user: {email: "miriam@me.com" }, id: miriam.id}
 
     it "will direct user to show page" do
       expect(response).to redirect_to miriam
     end
+
+
   end
 
   describe 'GET#show' do
