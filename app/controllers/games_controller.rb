@@ -25,7 +25,12 @@ class GamesController < ApplicationController
     self.rounds.last
     round = game.rounds.create!
 
-    redirect game_round_path
+    redirect_to game_path(game)
+  end
+
+  def show
+    game = Game.find_by(id: params[:id])
+    appearance = game.appearances.create!(player: current_user)
   end
 
 end
