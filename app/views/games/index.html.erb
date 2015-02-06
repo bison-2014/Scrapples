@@ -4,8 +4,9 @@
   <% Game.all.each do |game| %>
     <li>
       <%= "Game #{game.id}" %>
-      <%= button_to("Join", game_path(game)) %>
+      <%= link_to("Join", game_path(game)) %>
     </li>
   <%end%>
 </ul>
+
 <h1>Pending Invitations</h1>
