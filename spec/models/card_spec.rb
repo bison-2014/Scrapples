@@ -46,7 +46,7 @@ Describe "Card" do
     end
   end
   
-  descirbe '#updated_at' do
+  describe '#updated_at' do
     it 'has an updated_at attribute' do 
       expect(card).to respond_to(:updated_at)
     end
