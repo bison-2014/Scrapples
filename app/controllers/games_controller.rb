@@ -23,6 +23,9 @@ class GamesController < ApplicationController
 
   def last_round
     self.rounds.last
+    round = game.rounds.create!
+
+    redirect game_round_path
   end
 
 end

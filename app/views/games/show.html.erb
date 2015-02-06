@@ -1,0 +1,13 @@
+<h1>Scrapples to Scrapples</h1>
+
+
+
+
+<h2>Your Hand</h2>
+
+
+<div id="hand">
+  <% current_user.cards.each do |card| %>
+    <%= render 'cards/show_card', locals: {card: card} %>
+  <% end %>
+</div>
