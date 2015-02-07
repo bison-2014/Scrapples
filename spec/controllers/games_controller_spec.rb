@@ -11,10 +11,6 @@ feature 'users can join games' do
     expect(page).to have_content("Pending Invitations")
   end
 
-  scenario 'users can join game they are invited to' do
-    pending
-    # as above
-  end
 end
 
 
