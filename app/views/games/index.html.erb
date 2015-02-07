@@ -1,0 +1,12 @@
+<h1>Open Games</h1>
+
+<ul>
+  <% Game.all.each do |game| %>
+    <li>
+      <%= "Game #{game.id}" %>
+      <%= link_to("Join", game_path(game)) %>
+    </li>
+  <%end%>
+</ul>
+
+<h1>Pending Invitations</h1>
