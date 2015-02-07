@@ -1,12 +1,36 @@
-<h1>Open Games</h1>
+<% if current_user %>
+	<h1>Open Games</h1>
 
-<ul>
-  <% Game.all.each do |game| %>
-    <li>
-      <%= "Game #{game.id}" %>
-      <%= link_to("Join", game_path(game)) %>
-    </li>
-  <%end%>
-</ul>
+	<ul>
+	  <% Game.all.each do |game| %>
+	    <% unless game.rounds.size == 10 %>
+	    <li>
+	      <%= "Game #{game.id}" %>
+	      <!-- Will need to set conditional, if have already joined -->
+	      	<% if game.rounds.size >= 1 %>
+	      		<%= link_to "Resume", game_path(game) %>
+	      	<% else %>
+	      	<%= link_to "Join", game_path(game) %>
+	      	<% end %>
+	      	<% end %>	
+	    </li>
+	  <%end%>
+	</ul>
 
-<h1>Pending Invitations</h1>
+	
+	<h1>Pending Invitations</h1>
+
+
+	<h5>Past records!</h5>
+	<% Game.all.each do |game| %>
+		<% if game.rounds.size == 10 %>
+		  <li>
+		    <%= "Game #{game.id}" %>: <%= link_to "record", game_path(game) %>
+		  </li>
+		<% end %>
+	<% end %>
+
+<% else %>
+	<h3> Please sign in before playing games! </h3>
+	<% link_to login_path%>
+<% end %>
