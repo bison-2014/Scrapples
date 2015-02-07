@@ -1,0 +1,17 @@
+<h1>Scrapples to Scrapples</h1>
+
+<div id="played-cards">
+  <!-- show the played card here -->
+</div>
+
+<h2>Your Hand</h2>
+
+<div id="hand">
+  <% @appearance.held_cards.each do |card| %>
+    <%= render partial: 'cards/show', object: @card = card %>
+  <% end %>
+</div>
+
+<!-- card highlights on hover -->
+<!-- play button enabled when card highlighted -->
+<!-- play button ajaxes and appends card to played cards div -->

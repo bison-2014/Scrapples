@@ -1,5 +1,8 @@
 class GamesController < ApplicationController
 
+  def index
+    @games = Game.all
+  end
 
   def new
     render :new
@@ -12,6 +15,12 @@ class GamesController < ApplicationController
     redirect_to game_path(game)
   end
 
+  def show
+    @game = Game.find_by(id: params[:id])
+    @appearance = @game.appearances.find_by(player: current_user)
+    @round = @game.rounds.last
+  end
+
   private
 
   # def first_round
@@ -20,6 +29,9 @@ class GamesController < ApplicationController
 
   def last_round
     self.rounds.last
+    round = game.rounds.create!
+
+    redirect_to game_path(game)
   end
 
 end
