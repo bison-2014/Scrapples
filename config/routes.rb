@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
   resources :games, only: [:new, :create, :index, :show] do
-    #pull our current_user to match them up with the creation of a game they appear in.
-    resources :appearances, only: [:create]
+    resources :appearances, only: [:create] do
+      resources :plays, only: [:create]
+    end
   end
 
   root 'sessions#new'

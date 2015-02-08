@@ -15,6 +15,10 @@ class Game < ActiveRecord::Base
       Card.all.reject { |card| drawn_cards.include? card }
     end
 
+    def this_round
+      self.rounds.last
+    end
+
     private
 
     def create_first_round

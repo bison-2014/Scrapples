@@ -1,7 +1,10 @@
 <h1>Scrapples to Scrapples</h1>
 
 <div id="played-cards">
-  <!-- show the played card here -->
+<h2>Played Cards</h2>
+  <% if @my_play %>
+    <%= render partial: 'cards/show', object: @card = @my_play.card %>
+  <% end %>
 </div>
 
 <h2>Your Hand</h2>
