@@ -1,0 +1,14 @@
+<!-- The idea here is to show all games either a) being played, or b) available to, a player. -->
+<h1>Open Games</h1>
+<ul>
+  <% @games.each do |game| %>
+    <li>
+      <%= "Game: #{game.id}" %>
+	  	<% if has_joined?(game.id) %>
+			<%= link_to "Resume", game_path(game) %>
+		<% else %>
+			<%= link_to "Join", game_appearances_path(game), method: 'POST' %>
+		<% end %>
+    </li>
+  <%end%>
+</ul>
