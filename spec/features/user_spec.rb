@@ -9,8 +9,6 @@ feature 'user can sign up' do
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
     click_button 'Create User'
-
-    # save_and_open_page
   end
 end
 
@@ -21,7 +19,5 @@ feature 'user can log in' do
     fill_in 'Email', with: 'miriam2@me.com'
     fill_in 'Password', with: 'password'
     click_button 'Log in'
-
-    # save_and_open_page
   end
 end
