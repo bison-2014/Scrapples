@@ -32,6 +32,11 @@ ActiveRecord::Schema.define(version: 20150208013711) do
     t.datetime "updated_at"
   end
 
+  create_table "cast_votes", force: true do |t|
+    t.integer "appearance_id"
+    t.integer "play_id"
+  end
+
   create_table "games", force: true do |t|
     t.string   "winner"
     t.datetime "created_at"
