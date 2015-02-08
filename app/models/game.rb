@@ -6,6 +6,7 @@ class Game < ActiveRecord::Base
     has_many :players, through: :appearances
     has_many :holdings, through: :appearances
     has_many :drawn_cards, through: :holdings, source: :card
+    has_many :cast_votes, through: :appearances
 
 
     after_create :create_first_round
@@ -24,4 +25,5 @@ class Game < ActiveRecord::Base
     def create_first_round
       self.rounds.create!
     end
+
 end
