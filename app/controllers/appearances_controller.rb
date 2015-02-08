@@ -1,10 +1,10 @@
-class AppearancesController < ActionController::Base
+class AppearancesController < ApplicationController
 
   def create
     if current_user
       game = Game.find(params[:game_id])
       game.appearances.create(player_id: current_user.id)
-      redirect_to game_path
+      redirect_to game_path(game)
     else
       redirect_to login_path
     end
