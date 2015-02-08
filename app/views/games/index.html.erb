@@ -1,5 +1,36 @@
+<% if current_user %>
+	<h1>Open Games</h1>
 
-<div class="container">
+	<ul>
+	  <% Game.all.each do |game| %>
+	    <li>
+	      <%= "Game #{game.id}" %>
+	      	<% if has_joined?(game.id) %>
+	      		<%= link_to "Resume", game_path(game) %>
+	      	<% else %>
+	      		<%= link_to "Join", game_appearances_path(game) %>
+	      	<% end %>
+	    </li>
+	  <%end%>
+	</ul>
+
+	<h1>Pending Invitations</h1>
+
+
+	<h5>Past records!</h5>
+		<% Game.all.each do |game| %>
+			<!-- need to set conditional about game being over -->
+		  <li>
+		    <%= "Game #{game.id}" %>: <%= link_to "record", game_path(game) %>
+		  </li>
+	<% end %>
+
+<% else %>
+	<h3> Please sign in before playing games! </h3>
+	<% link_to login_path%>
+<% end %>
+
+<!-- <div class="container">
 	<%= render partial: 'games_avail', locals: { player: current_user.id } %>
 	<%= render partial: 'games_record', locals: { player: current_user.id} %>
-</div>
+</div> -->

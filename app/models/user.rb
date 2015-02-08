@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  has_many :appearances
+  has_many :appearances, foreign_key: :player_id
   has_many :games, through: :appearances
   has_many :rounds, through: :games
 
