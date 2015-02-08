@@ -1,20 +1,32 @@
 <h1>Scrapples to Scrapples</h1>
+<h2><%= @round.status %></h2>
 
 <div id="played-cards">
 <h2>Played Cards</h2>
-  <% if @my_play %>
-    <%= render partial: 'cards/show', object: @card = @my_play.card %>
+  <% if @round.status == 'waiting for plays' %>
+    <p>Played cards</p>
+    <% other_plays(@round, @my_play).each do |play| %>
+      <%= render partial: 'cards/show_back'  %>
+    <% end %>
+
+    <% if @my_play %>
+      <p>My Played Card</p>
+      <%= render partial: 'cards/show', object: @card = @my_play.card %>
+    <% end %>
+  <% elsif @round.status == 'waiting for votes' %>
+    <p> Vote on your favorite card </p>
+    <% other_plays(@round, @my_play).each do |play| %>
+      <%= render partial: 'cards/show', object: @card = play.card %>
+    <% end %>
   <% end %>
 </div>
 
-<h2>Your Hand</h2>
+<% if @round.status == 'waiting for plays' %>
+  <h2>Your Hand</h2>
 
-<div id="hand">
-  <% @appearance.held_cards.each do |card| %>
-    <%= render partial: 'cards/show', object: @card = card %>
-  <% end %>
-</div>
-
-<!-- card highlights on hover -->
-<!-- play button enabled when card highlighted -->
-<!-- play button ajaxes and appends card to played cards div -->
+  <div id="hand">
+    <% @appearance.held_cards.each do |card| %>
+      <%= render partial: 'cards/show', object: @card = card %>
+    <% end %>
+  </div>
+<% end %>

@@ -10,14 +10,23 @@ class PlaysController < ApplicationController
     @card = @play.card
     @success = @play.valid?
 
+    puts "??????????????????????????????????????????????????????????????????????????????????????????"
     # add a new card to your hand
-    appearance = Appearance.find(appearance_id)
-    appearance.draw_card!
+    if @success
+      appearance = Appearance.find(appearance_id)
+      appearance.draw_card!
 
-    # mark the played card as played in holdings table
-    p holding = appearance.holdings.find_by(card_id: card_id)
-    holding.played = true
-    holding.save
+      # mark the played card as played in holdings table
+      holding = appearance.holdings.find_by(card_id: card_id)
+      holding.played = true
+      holding.save
+
+      # update the round status if this is the last play of the round
+      puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+      p @play.round.update_status
+      p @play.round.status
+      puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    end
   end
 
   private
