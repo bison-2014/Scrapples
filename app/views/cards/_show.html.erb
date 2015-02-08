@@ -1,7 +1,6 @@
-<div class="card">
-
-  <h3><%= @card.name %></h3>
-  <p><%= @card.bio %></p>
-  <br>
-
+<div>
+  <%= link_to("", class: 'card') do %>
+    <h3><%= @card.name %></h3>
+    <p><%= @card.bio %></p>
+  <% end %>
 </div>

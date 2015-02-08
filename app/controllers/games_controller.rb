@@ -18,6 +18,7 @@ class GamesController < ApplicationController
   def show
     @game = Game.find_by(id: params[:id])
     @appearance = @game.appearances.find_by(player: current_user)
+    p @appearance
     @round = @game.rounds.last
   end
 
@@ -35,3 +36,4 @@ class GamesController < ApplicationController
   end
 
 end
+

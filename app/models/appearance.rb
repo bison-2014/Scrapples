@@ -2,6 +2,9 @@ class Appearance < ActiveRecord::Base
 
   belongs_to :player, class_name: 'User'
   belongs_to :game
+  
+  # I added
+  has_many :plays
 
   has_many :holdings
   has_many :drawn_cards, through: :holdings, source: :card
