@@ -8,4 +8,5 @@ class Round < ActiveRecord::Base
   
   validates_presence_of :game
 
+
 end

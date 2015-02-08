@@ -5,4 +5,5 @@ class CastVote < ActiveRecord::Base
   
   validates_uniqueness_of :play_id, :scope => [:appearance_id]
   
+  
 end
