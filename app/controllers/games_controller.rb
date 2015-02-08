@@ -3,8 +3,6 @@ class GamesController < ApplicationController
   def index
     @games = Game.all
   end
-
-  def new
     render :new
   end
 
@@ -36,3 +34,6 @@ class GamesController < ApplicationController
   end
 
 end
+
+
+  def new

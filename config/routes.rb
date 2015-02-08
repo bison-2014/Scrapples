@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   resources :games, only: [:new, :create, :index, :show] do
-    resources :appearances
+    #pull our current_user to match them up with the creation of a game they appear in.
+    resources :appearances, only: [:create]
   end
 
   root 'sessions#new'
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
+
 
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
