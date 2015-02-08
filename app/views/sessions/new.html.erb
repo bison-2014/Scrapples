@@ -1,25 +1,27 @@
 <div class="session">
-  <h1>Please login for access</h1>
+  <h1>Please login to your account</h1>
   <%= @errors %>
 
   <div class="login">
       <%= form_for(:session, url: login_path) do |f| %>
-      <div class="field">
-        <%= f.label :email %>
-        <%= f.email_field :email %> <br>
-      </div>
+    <div class="field">
+      <%= f.label :email, :class => "label" %>
+      <%= f.email_field :email, :class => "input_field" %> <br>
+    </div>
 
-      <div class="field">
-        <%= f.label :password %>
-        <%= f.password_field :password %>
-      </div>
-
-      <div class="action">
-        <%= f.submit "Log in" %>
-      </div>
-      <% end %>
+    <div class="field">
+      <%= f.label :password, :class => "label" %>
+      <%= f.password_field :password, :class => "input_field"%>
+    </div>
   </div>
-  <div class="new_user">
-    <p>New user? <%= link_to "Create a new account", signup_path %></p>
+
+
+  <div class="action">
+    <%= f.submit "Log in", :class => "submit" %>
+  </div>
+    <% end %>
+
+  <div class="action">
+    <%= button_to "Sign up", signup_path, :method => :get,:class => "submit"%>
   </div>
 </div>

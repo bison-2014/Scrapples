@@ -1,50 +1,82 @@
 @import 'reset';
 @import 'variable';
 
+
 body {
   /*font-family: $font-family;*/
   /*color: $font-color;*/
   /*background-color: $background-color;*/
-  border: 10px solid red;
+  /*border: 10px solid red;*/
   /*width: 80%;*/
   /*height: 500px;*/
   margin: 0 auto;
-  background-color: purple;
+  background-color: rgb(249,242,231);
   /*overflow: */
 }
 
 
 header {
-  border: 2px solid black;
+  /*border: 2px solid black;*/
   /*background-color: blue;*/
 }
 
 nav {
-  border: 10px solid black;
-  background-color: blue;
+  /*border: 10px solid black;*/
+
+  background-color: rgb(64,192,203);
+  border-bottom-right-radius: 11px;
+  border-bottom-left-radius: 11px;
+  margin: 0 50px 50px 50px;
+  color: rgb(249,242,231);
+  padding-bottom: 20px;
+
+}
+
+nav p {
+  font-family: cursive;
+  font-size: 40px;
+  text-align: center;
+  padding: 10px;
+
 }
 
 .container {
   /*background-color: $secondary-accent-light;*/
   margin: auto;
-  border: 10px solid green;
+  /*border: 10px solid green;*/
   /*width: 80%;*/
 }
 
 .login {
-  border: 10px solid yellow;
-  height: 300px;
+  float: left;
 }
 
 .session {
-  border: 10px solid pink;
-  width: 50%;
+  background-color: rgb(0,168,198);
+  padding: 50px;
+  padding-left: 80px;
+  border-radius: 11px;
+  width: 600px;
+  height: 200px;
   margin: 0 auto;
-  height: 400px;
+}
+
+.session h1 {
+  color: rgb(249,242,231);
+  font-family: fantasy;
+  font-size: 20px;
+  margin-left: -30px;
+  padding-bottom: 20px;
+}
+
+
+.logo {
+
 }
 
 h1 {
-color: blue;
+  font-size: 20px;
+/*color: blue;*/
 }
 
 h2{
@@ -55,6 +87,68 @@ a {
 
 li {
 }
+
+.field {
+  /*float: left;*/
+  margin-top: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 10px;
+  clear: both;
+  float: right;
+  /*margin: 0  auto;*/
+}
+
+.input_field {
+  border: 0;
+  float: right;
+  border-radius: 11px;
+  padding: 10px 20px 10px 20px;
+  width: 150px;
+  background-color: rgb(249,242,231);
+}
+
+.action{
+  margin: 105px 0;
+  margin-left: 20px;
+  margin-bottom: 0;
+  float: left;
+}
+
+.submit {
+  border: none;
+  -webkit-border-radius: 11;
+  -moz-border-radius: 11;
+  border-radius: 11px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  background: #AEE239;
+  padding: 7px 15px 7px 15px;
+  text-decoration: none;
+}
+
+.submit:hover {
+  background: #8FBE00;
+  text-decoration: none;
+}
+
+.label {
+  color: rgb(249,242,231);
+  margin-right: 10px;
+  font-family: fantasy;
+}
+
+
+.new_user {
+  clear: both;
+  width: 100%;
+  padding-right: 18%;
+  background-color: rgb(174,226,57);
+  margin: -50px;
+}
+
+
 
 
 
