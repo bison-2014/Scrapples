@@ -1,4 +1,3 @@
-# class Play < ActionController::Base
 class Play < ActiveRecord::Base
   belongs_to :round
   belongs_to :card
