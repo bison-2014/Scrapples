@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
     session.delete(:user_id)
     @current_user = nil
   end
-
+  
   helper_method :log_in, :current_user, :logged_in?, :log_out
 
 end
