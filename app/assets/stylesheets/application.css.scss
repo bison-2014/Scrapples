@@ -1,3 +1,35 @@
+@import 'reset';
+@import 'variables';
+
+body {
+  font-family: $font-family;
+  color: $font-color;
+  background-color: $background-color;
+}
+
+
+header {
+}
+
+.container {
+  background-color: $secondary-accent-light;
+  margin: auto;
+  width: 900px;
+}
+
+h1 {
+}
+
+h2{
+}
+
+a {
+}
+
+li {
+}
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
