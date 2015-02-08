@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :games, only: [:new, :create, :index, :show]
+  resources :games, only: [:new, :create, :index, :show] do
+    resources :appearances
+  end
 
   root 'sessions#new'
   get 'signup'  => 'users#new'
