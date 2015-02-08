@@ -7,5 +7,8 @@ class Play < ActiveRecord::Base
   has_many :cast_votes
 
   validates_presence_of :appearance, :card, :round
+  validates_uniqueness_of :appearance, :scope => [:round]
+
+
 
 end
