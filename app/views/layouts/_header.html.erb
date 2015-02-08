@@ -1,9 +1,8 @@
 <header>
-  <!-- <div class="container"> -->
     <nav>
-      <div class="header">
+      <div class="logo">
         <h1>Scrapples</h1>
-      </div>       
+      </div>
         <ul>
         <% if logged_in? %>
           <li><%= link_to "Profile", current_user %></li>
@@ -14,5 +13,4 @@
         <% end %>
       </ul>
     </nav>
-  <!-- </div> -->
 </header>
