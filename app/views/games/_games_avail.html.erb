@@ -4,7 +4,11 @@
   <% @games.each do |game| %>
     <li>
       <%= "Game: #{game.id}" %>
-      <%= link_to("Join Game", game_path(game)) %>
+	  	<% if has_joined?(game.id) %>
+			<%= link_to "Resume", game_path(game) %>
+		<% else %>
+			<%= link_to "Join", game_appearances_path(game), method: 'POST' %>
+		<% end %>
     </li>
   <%end%>
 </ul>
