@@ -29,6 +29,26 @@ a {
 li {
 }
 
+.card {
+	border: 2px solid black;
+  position: block;
+	height: 375px;
+	width: 250px;
+}
+
+.cardname {
+  font-size: 16px;
+  font-family: 'Voltaire', sans-serif;
+}
+
+// .cardpic {
+//   height: 50px;
+//   width: 100px;
+// }
+
+.cardbio {
+
+}
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
