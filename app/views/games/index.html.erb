@@ -1,32 +1,37 @@
+<div class="container">
+	<div class="games_index">
+	<% if current_user %>
+		<h5>Open Games</h5>
+
+		<ul class="open_games">
+		  <% Game.all.each do |game| %>
+		    <li>
+		      <%= "Game #{game.id}" %>
+		      	<% if has_joined?(game.id) %>:
+		      		<%= link_to "Resume", game_path(game) %>
+		      	<% else %>
+		      		<%= link_to "Join", game_appearances_path(game), method: :post %>
+		      	<% end %>
+		    </li>
+		  <%end%>
+		</ul>
+</div>
+
 <div class="games_index">
-<% if current_user %>
-	<h1>Open Games</h1>
+		<!-- <h1>Pending Invitations</h1> -->
 
-	<ul>
-	  <% Game.all.each do |game| %>
-	    <li>
-	      <%= "Game #{game.id}" %>
-	      	<% if has_joined?(game.id) %>
-	      		<%= link_to "Resume", game_path(game) %>
-	      	<% else %>
-	      		<%= link_to "Join", game_appearances_path(game), method: :post %>
-	      	<% end %>
-	    </li>
-	  <%end%>
-	</ul>
+		<h5>Past Records</h5>
+			<% Game.all.each do |game| %>
+				<!-- need to set conditional about game being over -->
+			  <li>
+			    <%= "Game #{game.id}" %>: <%= link_to "View", game_path(game) %>
+			  </li>
+		<% end %>
 
-	<h1>Pending Invitations</h1>
-
-	<h5>Past records!</h5>
-		<% Game.all.each do |game| %>
-			<!-- need to set conditional about game being over -->
-		  <li>
-		    <%= "Game #{game.id}" %>: <%= link_to "record", game_path(game) %>
-		  </li>
+	<% else %>
+		<h3> Please sign in before playing games! </h3>
+		<%= link_to "Login", login_path %>
 	<% end %>
-
-<% else %>
-	<h3> Please sign in before playing games! </h3>
-	<%= link_to "Login", login_path %>
-<% end %>
+</div>
+</div>
 </div>
