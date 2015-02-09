@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :games, only: [:new, :create, :index, :show] do
     #pull our current_user to match them up with the creation of a game they appear in.
-    resources :cast_votes, only: [:create, :indext]
+    resources :cast_votes, only: [:create, :index]
     resources :appearances, only: [:create]
   end
 
