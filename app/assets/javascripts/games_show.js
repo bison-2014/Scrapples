@@ -5,8 +5,8 @@ $( document ).ready(function() {
   var gameTimestamp = $timestampDiv.attr('gameTimestamp')
   var roundTimestamp = $timestampDiv.attr('roundTimestamp')
   var gameId = $timestampDiv.attr('game-id')
-  console.log(gameTimestamp)
-  console.log(roundTimestamp)
+  // console.log(gameTimestamp)
+  // console.log(roundTimestamp)
 
   var interval = 2000;  // 1000 = 1 second, 3000 = 3 seconds
   function checkForGameChanges() {
@@ -16,10 +16,10 @@ $( document ).ready(function() {
             data: { },
             dataType: 'json',
             success: function (data) {
-                    console.log("Success!")
-                    console.log(data)
+                    // console.log("Success!")
+                    // console.log(data)
 
-                    // Do NOT user !== here; the data types are not the same
+                    // Do NOT use !== here; the data types are not the same
                     if ((gameTimestamp != data.gameTimestamp) || (roundTimestamp != data.roundTimestamp)) {
                       location.reload()
                     }

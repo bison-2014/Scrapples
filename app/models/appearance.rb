@@ -30,7 +30,6 @@ class Appearance < ActiveRecord::Base
   end
 
   def incremement_point!
-
     self.points += 1
     self.save
   end
