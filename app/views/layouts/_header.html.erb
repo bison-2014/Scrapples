@@ -1,12 +1,12 @@
-    <nav>
-      <div class="logo">
-        <p>Scrapples2Scrapples</p>
-      </div>
-        <ul>
-        <% if logged_in? %>
-          <li><%= link_to "Profile", current_user %></li>
-          <li><%= link_to "Log out", logout_path, method: "delete" %> </li>
-          <% end %>
-			</ul>
-    </nav>
+<nav>
+  <p>Scrapples2Scrapples</p>
+  <div class="main_header">
+    <ul>
+    <% if logged_in? %>
+      <li><%= link_to "Log out", logout_path, method: "delete" %> </li>
+      <li><%= link_to "Profile", current_user %></li>
+    <% end %>
+    </div>
+	</ul>
+</nav>
 

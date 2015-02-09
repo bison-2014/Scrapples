@@ -1,6 +1,9 @@
+<div class="session_errors">
+  <%= @errors %>
+</div>
+
 <div class="session">
   <h1>Please login to your account</h1>
-  <%= @errors %>
 <div class="center">
   <div class="login">
       <%= form_for(:session, url: login_path) do |f| %>
@@ -20,7 +23,7 @@
 
     <% end %>
 
-    <%= button_to "Sign up", signup_path, :method => :get,:class => "submit"%>
+    <%= button_to "Sign up", signup_path, :method => :get, :class => "submit"%>
   </div>
 
 </div>
