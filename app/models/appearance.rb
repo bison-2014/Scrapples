@@ -25,8 +25,14 @@ class Appearance < ActiveRecord::Base
     card
   end
 
+  def register_vote
+    self.incremement_point!
+  end
+
   def incremement_point!
+
     self.points += 1
+    self.save
   end
 
   def held_cards

@@ -19,7 +19,6 @@ class GamesController < ApplicationController
     @game = Game.find_by(id: params[:id])
     @appearance = @game.appearances.find_by(player: current_user)
     @round = @game.rounds.last
-    @computers_card = @round.computer_draws_card
 
     @my_play = Play.find_by(appearance: @appearance, round: @round)
   end
