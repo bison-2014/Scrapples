@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20150209010921) do
   end
 
   create_table "cast_votes", force: true do |t|
-    t.integer "appearance_id"
+    t.integer "voter_id"
     t.integer "play_id"
   end
 
