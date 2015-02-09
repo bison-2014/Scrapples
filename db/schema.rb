@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 20150209010921) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "status",            default: "waiting for plays"
-    t.boolean  "complete?",         default: false
+    t.boolean  "complete",          default: false
     t.integer  "computers_card_id"
   end
 

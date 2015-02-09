@@ -2,9 +2,9 @@
 <h2><%= @round.status %></h2>
 
 <div class="card" id="computers-card">
-  <%= @computers_card.name %>
+  <%= @round.computers_card.name %>
   <br>
-  <%= @computers_card.bio %>
+  <%= @round.computers_card.bio %>
 </div>
 
 <div id="played-cards">
@@ -24,7 +24,7 @@
   <% elsif @round.status == 'waiting for votes' %>
     <p> Vote on your favorite card </p>
     <% other_plays(@round, @my_play).each do |play| %>
-      <%= render partial: 'cards/show', object: @card = play.card %>
+      <%= render partial: 'cards/vote', object: @card = play.card %>
     <% end %>
   <% end %>
 </div>

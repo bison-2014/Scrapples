@@ -25,4 +25,24 @@ class Round < ActiveRecord::Base
     self.computers_card = Card.all.reject { |card| drawn_cards.include? card }.sample
   end
 
+  def register_vote
+    if self.cast_votes.count == self.appearances.count
+      self.complete = true
+      self.set_winner
+      self.save
+    end
+  end
+
+  def set_winner
+    round_winner = Appearance.find_by(id: hashed_vote_counts.max[0])
+    round_winner.incremement_point!
+  end
+
+  def hashed_vote_counts
+    # grab all cast_votes and make a hash a la {player_id: voute_count}
+    self.cast_votes.each_with_object({}) do |vote, vote_count_hash|
+      vote_count_hash[vote.play_id] ? vote_count_hash[vote.play_id] += 1 : vote_count_hash[vote.play_id] = 1
+      vote_count_hash
+    end
+  end
 end
