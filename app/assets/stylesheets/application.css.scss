@@ -70,6 +70,7 @@ nav li {
   margin: auto;
 }
 
+
 .login {
   padding-left: 180px;
 }
@@ -97,13 +98,31 @@ nav li {
 
 }
 
-h2{
+
+
+.cardwrapper {
+	border: 2px solid black;
+  position: block;
+	height: 330px;
+	width: 175px;
+  border-radius: 10px;
+  float: left;
+  margin: 5px;
+  padding: 10px;
 }
 
-a {
+.cardname {
+  font-family: 'Voltaire', sans-serif;
+
 }
 
-li {
+// .cardpic {
+//   height: 50px;
+//   width: 100px;
+// }
+
+img {
+  width: 100%;
 }
 
 .field {

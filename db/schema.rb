@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20150209010921) do
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "img_url"
   end
 
   create_table "cast_votes", force: true do |t|
