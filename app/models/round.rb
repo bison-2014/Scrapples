@@ -10,5 +10,11 @@ class Round < ActiveRecord::Base
 
   validates_presence_of :game
 
+  def update_status
+    if self.plays.length >= self.appearances.length
+      self.status = "waiting for votes"
+      self.save
+    end
+  end
 
 end

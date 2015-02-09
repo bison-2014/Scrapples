@@ -2,7 +2,7 @@ class Appearance < ActiveRecord::Base
 
   belongs_to :player, class_name: 'User'
   belongs_to :game
-  
+
   # I added
   has_many :plays
 
@@ -30,11 +30,11 @@ class Appearance < ActiveRecord::Base
   end
 
   def held_cards
-    self.drawn_cards.where(holdings: { played?: false} )
+    self.drawn_cards.where(holdings: { played: false} )
   end
 
   def played_cards
-    self.drawn_cards.where(holdings: { played?: true} )
+    self.drawn_cards.where(holdings: { played: true} )
   end
 
   private

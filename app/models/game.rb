@@ -19,11 +19,11 @@ class Game < ActiveRecord::Base
     def this_round
       self.rounds.last
     end
-    
+
     private
 
     def create_first_round
       self.rounds.create!
     end
-    
+
 end

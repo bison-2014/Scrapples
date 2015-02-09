@@ -6,4 +6,8 @@ module ApplicationHelper
   def has_joined?(game_id)
     current_user.appearances.find_by(game_id: game_id)
   end
+
+  def other_plays(rounds, my_play)
+    rounds.plays.reject { |play| play == my_play }
+  end
 end

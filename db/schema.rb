@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20150209003753) do
   create_table "holdings", force: true do |t|
     t.integer  "card_id"
     t.integer  "appearance_id"
-    t.boolean  "played?",       default: false
+    t.boolean  "played",        default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
