@@ -1,3 +1,4 @@
+<div class="games_index">
 <% if current_user %>
 	<h1>Open Games</h1>
 	
@@ -18,7 +19,6 @@
 
 	<h1>Pending Invitations</h1>
 
-
 	<h5>Past records!</h5>
 		<% Game.all.each do |game| %>
 			<!-- need to set conditional about game being over -->
@@ -29,6 +29,8 @@
 
 <% else %>
 	<h3> Please sign in before playing games! </h3>
-	<% link_to login_path%>
+	<%= link_to "Login", login_path %>
 <% end %>
+
+</div>
 
