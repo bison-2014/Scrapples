@@ -1,9 +1,16 @@
 <h1>Scrapples to Scrapples</h1>
 <h2><%= @round.status %></h2>
 
+<div class="card" id="computers-card">
+  <%= @round.computers_card.name %>
+  <br>
+  <%= @round.computers_card.bio %>
+</div>
+
 <div id="played-cards">
 <h2>Played Cards</h2>
   <% if @round.status == 'waiting for plays' %>
+
     <p>Played cards</p>
     <% other_plays(@round, @my_play).each do |play| %>
       <%= render partial: 'cards/show_back'  %>
@@ -13,10 +20,11 @@
       <p>My Played Card</p>
       <%= render partial: 'cards/show', object: @card = @my_play.card %>
     <% end %>
+
   <% elsif @round.status == 'waiting for votes' %>
     <p> Vote on your favorite card </p>
     <% other_plays(@round, @my_play).each do |play| %>
-      <%= render partial: 'cards/show', object: @card = play.card %>
+      <%= render partial: 'cards/vote', object: @card = play.card %>
     <% end %>
   <% end %>
 </div>

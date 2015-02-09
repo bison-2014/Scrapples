@@ -1,6 +1,7 @@
 <div class="container">
 	<div class="games_index">
 	<% if current_user %>
+	<%= link_to "Create a New Game!", new_game_path %>
 		<h5>Open Games</h5>
 
 		<ul class="open_games">
@@ -32,6 +33,5 @@
 		<h3> Please sign in before playing games! </h3>
 		<%= link_to "Login", login_path %>
 	<% end %>
-</div>
 </div>
 </div>

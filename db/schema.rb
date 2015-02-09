@@ -30,10 +30,11 @@ ActiveRecord::Schema.define(version: 20150209010921) do
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "img_url"
   end
 
   create_table "cast_votes", force: true do |t|
-    t.integer "appearance_id"
+    t.integer "voter_id"
     t.integer "play_id"
   end
 
@@ -66,7 +67,9 @@ ActiveRecord::Schema.define(version: 20150209010921) do
     t.integer  "game_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "status",     default: "waiting for plays"
+    t.string   "status",            default: "waiting for plays"
+    t.boolean  "complete",          default: false
+    t.integer  "computers_card_id"
   end
 
   create_table "users", force: true do |t|

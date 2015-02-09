@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :cast_votes, only: [:create]
 
     #pull our current_user to match them up with the creation of a game they appear in.
+
   end
 
   root 'sessions#new'
