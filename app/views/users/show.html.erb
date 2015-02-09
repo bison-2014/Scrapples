@@ -1,4 +1,7 @@
-<h1>Welcome <%= @user.name %>!</h1>
-<%= link_to 'edit user', edit_user_path(@user) %>
-
-<%= link_to 'play games here!', games_path %>
+<div class="user_show_page">
+  <h2>Welcome <%= @user.name %>!</h2>
+    <div class="show_button">
+      <%= button_to 'Edit Profile', edit_user_path(@user), :method => :get, :class => "profile_button" %>
+      <%= button_to 'Play Games Here!', games_path, :method => :get, :class => "profile_button" %>
+    </div>
+</div>

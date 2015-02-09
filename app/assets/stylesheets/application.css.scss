@@ -1,23 +1,100 @@
 @import 'reset';
 @import 'variable';
+@import url(http://fonts.googleapis.com/css?family=Voltaire);
+
 
 body {
-  font-family: $font-family;
-  color: $font-color;
-  background-color: $background-color;
+  margin: 0 auto;
+  background-color: rgb(249,242,231);
+  /*overflow: */
+}
+
+.session_errors {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: 'Voltaire', sans-serif;
+}
+
+.error_explanation {
+  font-size: 20px;
+  font-family: 'Voltaire', sans-serif;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 10px;
+
 }
 
 
-header {
+.main_header li {
+  padding-right: 40px;
+  font-family: 'Voltaire', sans-serif;
+  font-size: 20px;
+  float: right;
+  padding-bottom: 10px;
+}
+
+li a {
+  text-decoration: none;
+  color: rgb(249,242,231);
+}
+
+li a:hover {
+  color: rgb(143,190,0);
+}
+
+
+nav {
+  background-color: rgb(64,192,203);
+  border-bottom-right-radius: 11px;
+  border-bottom-left-radius: 11px;
+  margin: 0 50px 50px 50px;
+  color: rgb(249,242,231);
+  padding-bottom: 20px;
+
+}
+
+nav p {
+  font-family: cursive;
+  font-size: 40px;
+  text-align: center;
+  padding: 10px;
+
+}
+
+nav li {
 }
 
 .container {
-  background-color: $secondary-accent-light;
   margin: auto;
-  width: 900px;
 }
 
-h1 {
+.login {
+  padding-left: 180px;
+}
+
+.session {
+  background-color: rgb(0,168,198);
+  padding: 50px;
+  border-radius: 11px;
+  width: 200px;
+  height: 250px;
+  margin: 0 auto;
+}
+
+.session h1 {
+  text-align: center;
+  color: rgb(249,242,231);
+  font-family: 'Voltaire', sans-serif;
+  font-size: 20px;
+  margin-left: -30px;
+  padding-bottom: 20px;
+}
+
+
+.logo {
+
 }
 
 h2{
@@ -29,7 +106,159 @@ a {
 li {
 }
 
+.field {
+  margin-top: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 10px;
+  clear: both;
+  float: right;
+}
 
+.input_field {
+  border: 0;
+  border-radius: 11px;
+  padding: 10px 20px 10px 20px;
+  width: 150px;
+  background-color: rgb(249,242,231);
+}
+
+.action {
+  padding-top: 20px;
+  margin-left: -32px;
+  clear: both;
+  width: 500px;
+  height: 200px;
+}
+
+.submit {
+  margin-left: 20px;
+  float: left;
+  border: none;
+  -webkit-border-radius: 11;
+  -moz-border-radius: 11;
+  border-radius: 11px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  background: #AEE239;
+  padding: 7px 15px 7px 15px;
+  text-decoration: none;
+}
+
+.submit:hover {
+  background: #8FBE00;
+  text-decoration: none;
+}
+
+.label {
+  color: rgb(249,242,231);
+  margin-right: 10px;
+  font-family: 'Voltaire', sans-serif;
+  line-height: 45px;
+}
+
+
+.new_user {
+
+}
+.user_field {
+  padding-bottom: 40px;
+  top: 50px;
+  position: relative;
+}
+
+.user_page {
+  background-color: rgb(0,168,198);
+  padding: 40px;
+  border-radius: 11px;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  text-align: center;
+
+}
+
+.center {
+  margin: 0 auto;
+  width: 80%;
+}
+
+
+.sign_up h1 {
+  text-align: center;
+  color: rgb(249,242,231);
+  font-family: 'Voltaire', sans-serif;
+  font-size: 20px;
+  margin-left: -30px;
+  position: relative;
+  top: 50px;
+
+}
+.user_edit h1 {
+  text-align: center;
+  color: rgb(249,242,231);
+  font-family: 'Voltaire', sans-serif;
+  font-size: 20px;
+  margin-left: -30px;
+  position: relative;
+  top: 50px;
+
+}
+
+.user_submit {
+  margin-top: 50px;
+  text-align: center;
+  position: relative;
+  left: 140px;
+}
+
+h2 {
+  text-align: center;
+  font-family: 'Voltaire', sans-serif;
+  font-size: 50px;
+}
+
+.user_show_page {
+  /*height: 100px;*/
+  text-align: center;
+  margin-top: 50px;
+  background-color: rgb(0,168,198);
+  height: 300px;
+  width: 500px;
+  margin: 0 auto;
+  border-radius: 11px;
+  padding: 50px;
+  /*background-color: blue;*/
+}
+
+
+.profile_button {
+  /*margin-left: 20px;*/
+  /*float: left;*/
+  border: none;
+  -webkit-border-radius: 11;
+  -moz-border-radius: 11;
+  border-radius: 11px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 30px;
+  background: #AEE239;
+  padding:  7px 15px 7px 15px;
+  text-decoration: none;
+  margin-top: 60px;
+  /*margin-left: 40px;*/
+  clear: both;
+  /*text-align: center;*/
+  /*margin: 0 auto;*/
+  /*margin: 0 auto;*/
+  /*border: 10px solid blue;*/
+  /*margin: 0 auto;*/
+}
+
+.user_show_page h2 {
+  color: rgb(249,242,231);
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -42,6 +271,6 @@ li {
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require_tree .
  */
