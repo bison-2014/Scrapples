@@ -18,7 +18,7 @@ class GamesController < ApplicationController
   def show
     @game = Game.find_by(id: params[:id])
     @appearance = @game.appearances.find_by(player: current_user)
-    @round = @game.rounds.last
+    @round = @game.this_round
 
     @my_play = Play.find_by(appearance: @appearance, round: @round)
   end
@@ -40,12 +40,12 @@ class GamesController < ApplicationController
   #   self.rounds.first
   # end
 
-  def last_round
-    self.rounds.last
-    round = game.rounds.create!
+  # def last_round
+  #   self.rounds.last
+  #   round = game.rounds.create!
 
-    redirect_to game_path(game)
-  end
+  #   redirect_to game_path(game)
+  # end
 
   def game_params
     params.permit(:gameId)

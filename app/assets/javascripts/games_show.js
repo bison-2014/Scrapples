@@ -11,7 +11,7 @@ $( document ).ready(function() {
   var interval = 2000;  // 1000 = 1 second, 3000 = 3 seconds
   function checkForGameChanges() {
     $.ajax({
-            type: 'GET',
+            type: 'PATCH',
             url: '/games/' + gameId,
             data: { },
             dataType: 'json',
