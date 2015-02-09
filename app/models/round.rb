@@ -30,6 +30,7 @@ class Round < ActiveRecord::Base
       self.complete = true
       self.set_winner
       self.save
+      self.game.rounds.create!(game_id: self.game.id)
     end
   end
 
