@@ -30,3 +30,9 @@
     <% end %>
   </div>
 <% end %>
+
+
+<div id='game-timestamp'
+     game-id="<%= @game.id %>"
+     gameTimestamp="<%= @game.updated_at.to_i %>"
+     roundTimestamp="<%= @round.updated_at.to_i %>" />
