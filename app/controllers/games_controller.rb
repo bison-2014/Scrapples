@@ -19,9 +19,21 @@ class GamesController < ApplicationController
     @game = Game.find_by(id: params[:id])
     @appearance = @game.appearances.find_by(player: current_user)
     @round = @game.rounds.last
+    @computers_card = @round.computer_draws_card
 
     @my_play = Play.find_by(appearance: @appearance, round: @round)
   end
+
+  # I'm hijacking the updating route to check if the game has been updated
+  def update
+    game = Game.find_by(id: params[:id])
+    round = game.this_round
+
+    respond_to do |format|
+      format.json { render json: { gameTimestamp: game.updated_at.to_i, roundTimestamp: round.updated_at.to_i } }
+    end
+  end
+
 
   private
 
@@ -34,6 +46,10 @@ class GamesController < ApplicationController
     round = game.rounds.create!
 
     redirect_to game_path(game)
+  end
+
+  def game_params
+    params.permit(:gameId)
   end
 
 end

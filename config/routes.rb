@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :games, only: [:new, :create, :index, :show] do
+  resources :games, only: [:new, :create, :index, :show, :update] do
 
     resources :appearances, only: [:create] do
       resources :plays, only: [:create]

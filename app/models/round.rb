@@ -17,4 +17,10 @@ class Round < ActiveRecord::Base
     end
   end
 
+  def computer_draws_card
+    drawn_cards = self.game.drawn_cards
+    @computers_card = Card.all.reject { |card| drawn_cards.include? card }.sample
+    @computers_card
+  end
+
 end
