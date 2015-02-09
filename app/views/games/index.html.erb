@@ -1,6 +1,8 @@
 <% if current_user %>
 	<h1>Open Games</h1>
-
+	
+	<%= link_to "Create a New Game!", new_game_path %>
+	
 	<ul>
 	  <% Game.all.each do |game| %>
 	    <li>
@@ -30,7 +32,3 @@
 	<% link_to login_path%>
 <% end %>
 
-<!-- <div class="container">
-	<%= render partial: 'games_avail', locals: { player: current_user.id } %>
-	<%= render partial: 'games_record', locals: { player: current_user.id} %>
-</div> -->
