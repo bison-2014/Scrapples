@@ -8,6 +8,7 @@ class CastVote < ActiveRecord::Base
   after_create :inform_round, :inform_appearance
 
   def inform_round
+    self.play.votes += 1
     self.play.round.register_vote
   end
 
