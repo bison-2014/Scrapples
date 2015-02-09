@@ -1,27 +1,28 @@
 <div class="session">
   <h1>Please login to your account</h1>
   <%= @errors %>
-
+<div class="center">
   <div class="login">
       <%= form_for(:session, url: login_path) do |f| %>
     <div class="field">
-      <%= f.label :email, :class => "label" %>
-      <%= f.email_field :email, :class => "input_field" %> <br>
+      <%= f.email_field :email, :class => "input_field", :placeholder => "Email" %> <br>
     </div>
 
     <div class="field">
-      <%= f.label :password, :class => "label" %>
-      <%= f.password_field :password, :class => "input_field"%>
+      <%= f.password_field :password, :class => "input_field", :placeholder => "Password"%>
     </div>
-  </div>
 
+
+  </div>
 
   <div class="action">
     <%= f.submit "Log in", :class => "submit" %>
-  </div>
+
     <% end %>
 
-  <div class="action">
     <%= button_to "Sign up", signup_path, :method => :get,:class => "submit"%>
   </div>
+
+</div>
+
 </div>

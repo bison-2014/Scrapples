@@ -1,5 +1,6 @@
 @import 'reset';
 @import 'variable';
+@import url(http://fonts.googleapis.com/css?family=Voltaire);
 
 
 body {
@@ -48,22 +49,22 @@ nav p {
 }
 
 .login {
-  float: left;
+  padding-left: 180px;
 }
 
 .session {
   background-color: rgb(0,168,198);
   padding: 50px;
-  padding-left: 80px;
   border-radius: 11px;
-  width: 600px;
-  height: 200px;
+  width: 200px;
+  height: 250px;
   margin: 0 auto;
 }
 
 .session h1 {
+  text-align: center;
   color: rgb(249,242,231);
-  font-family: fantasy;
+  font-family: 'Voltaire', sans-serif;
   font-size: 20px;
   margin-left: -30px;
   padding-bottom: 20px;
@@ -72,11 +73,6 @@ nav p {
 
 .logo {
 
-}
-
-h1 {
-  font-size: 20px;
-/*color: blue;*/
 }
 
 h2{
@@ -101,21 +97,23 @@ li {
 
 .input_field {
   border: 0;
-  float: right;
   border-radius: 11px;
   padding: 10px 20px 10px 20px;
   width: 150px;
   background-color: rgb(249,242,231);
 }
 
-.action{
-  margin: 105px 0;
-  margin-left: 20px;
-  margin-bottom: 0;
-  float: left;
+.action {
+  padding-top: 20px;
+  margin-left: -32px;
+  clear: both;
+  width: 500px;
+  height: 200px;
 }
 
 .submit {
+  margin-left: 20px;
+  float: left;
   border: none;
   -webkit-border-radius: 11;
   -moz-border-radius: 11;
@@ -136,21 +134,42 @@ li {
 .label {
   color: rgb(249,242,231);
   margin-right: 10px;
-  font-family: fantasy;
+  font-family: 'Voltaire', sans-serif;
+  line-height: 45px;
 }
 
 
 .new_user {
-  clear: both;
+  /*clear: both;
   width: 100%;
   padding-right: 18%;
-  background-color: rgb(174,226,57);
-  margin: -50px;
+
+  margin: -50px;*/
+}
+.user_field {
+  /*margin-top: 10px;*/
+  padding-bottom: 40px;
 }
 
+.user_page {
+  background-color: rgb(0,168,198);
+  padding: 50px;
+  /*padding-left: 80px;*/
+  border-radius: 11px;
+  width: 600px;
+  height: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
 
+.center {
+  margin: 0 auto;
+  width: 80%;
+}
 
+.sign_up {
 
+}
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
