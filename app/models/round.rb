@@ -36,20 +36,7 @@ class Round < ActiveRecord::Base
 
   def set_winner
     # round_winner = Appearance.find_by(id: hashed_vote_counts.max[0])
-    round_winner = plays.order(votes: :desc).limit(1)
+    round_winner = self.plays.order(votes: :desc).limit(1).appearance
     round_winner.incremement_point!
-
   end
-
-  # def hashed_vote_counts
-      hash = Hash.new(0)
-      cast_votes.each do |object|
-        hash[object] += 1
-      end
-  #   # grab all cast_votes and make a hash a la {player_id: voute_count}
-  #   self.cast_votes.each_with_object({}) do |vote, vote_count_hash|
-  #     vote_count_hash[vote.play_id] ? vote_count_hash[vote.play_id] += 1 : vote_count_hash[vote.play_id] = 1
-  #     vote_count_hash
-  #   end
-  # end
 end
