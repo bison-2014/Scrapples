@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   end
 
-  root 'sessions#new'
+  root 'games#index'
   get 'signup'  => 'users#new'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
