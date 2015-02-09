@@ -35,12 +35,12 @@ body {
   padding-bottom: 10px;
 }
 
-li a {
+a {
   text-decoration: none;
   color: rgb(249,242,231);
 }
 
-li a:hover {
+a:hover {
   color: rgb(143,190,0);
 }
 
@@ -63,10 +63,12 @@ nav p {
 
 }
 
-nav li {
+h5 {
+ line-height: 200%;
 }
 
 .container {
+  width: 75%;
   margin: auto;
 }
 
@@ -279,7 +281,28 @@ h2 {
   color: rgb(249,242,231);
 }
 
+
+
 .games_index {
+  width: 200px;
+  border-radius: 11px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Voltaire', sans-serif;
+  background-color: rgb(0,168,198);
+  padding: 50px;
+  font-size: 30px;
+  float: left;
+  margin: 50px;
+
+}
+
+li {
+  list-style-type: none;
+}
+
+.open_games {
+
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
