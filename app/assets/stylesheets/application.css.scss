@@ -100,10 +100,34 @@ h5 {
 
 }
 
-
+#computers-card {
+	background-color: #AEE239;
+}
 
 .cardwrapper {
-	border: 2px solid black;
+	border: 5px solid black;
+  position: block;
+	height: 330px;
+	width: 200px;
+  border-radius: 10px;
+  float: left;
+  margin: 5px;
+  padding: 10px;
+	background-color: rgb(0,168,198);
+}
+//
+//.cardname {
+//  font-family: 'Voltaire', sans-serif;
+//}
+//
+//.cardname a {
+//  font-family: 'Voltaire', sans-serif;
+//}
+
+
+.cardback {
+	clear: both;
+	border: 5px solid black;
   position: block;
 	height: 330px;
 	width: 175px;
@@ -111,20 +135,7 @@ h5 {
   float: left;
   margin: 5px;
   padding: 10px;
-}
-
-.cardname {
-  font-family: 'Voltaire', sans-serif;
-
-}
-
-// .cardpic {
-//   height: 50px;
-//   width: 100px;
-// }
-
-img {
-  width: 100%;
+	background-color: blue;
 }
 
 .field {
