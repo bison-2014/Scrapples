@@ -1,9 +1,9 @@
 
 <div id="card<%=@card.id%>" class='cardwrapper'>
 <%= link_to(game_appearance_plays_path(game_id: @game.id, round_id: @game.this_round.id, appearance_id: @appearance.id, card_id: @card.id), method: :post, remote: true) do %>
-<div class='cardname'><h2><%= @card.name %></h2></div>
-<div class='cardpic'><img src="<%= @card.img_url %>"></div>
-<div class='cardbio'><p><%= @card.bio %></p></div>
+<h2><%= @card.name %></h2>
+<!-- <div class='cardpic'><img src="<%= @card.img_url %>"></div> -->
+<p><%= @card.bio %></p>
 <% end %>
 </div>
 
